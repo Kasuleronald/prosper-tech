@@ -6,7 +6,7 @@
   <title>Prosper Technologies Ltd</title>
   <link rel="icon" href="prosper.png" type="image/png">
   <style>
-   /* General Styles */
+  /* General Styles */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -29,9 +29,11 @@ body {
   justify-content: space-between;
   align-items: center;
   background-image: url('tech2.jpg');
-  background-color: #333;
+  background-color: rgba(51, 51, 51, 0.911);
   padding: 0 20px;
   height: 130px;
+  z-index: 1000; /* Ensure navbar is on top */
+  position: relative;
 }
 
 .logo-container {
@@ -76,6 +78,8 @@ body {
   text-decoration: none;
   display: block;
   transition: background-color 0.3s ease;
+  text-align: center; /* Center menu items */
+  background-color: rgba(51, 51, 51, 0); /* Set background color */
 }
 
 .navbar ul li a:hover {
@@ -91,8 +95,9 @@ body {
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: #444;
+  background-color: rgba(51, 51, 51, 0.815); /* Set background color */
   min-width: 150px;
+  z-index: 1000; /* Ensure submenu is on top */
 }
 
 .navbar ul ul li {
@@ -101,6 +106,7 @@ body {
 
 .navbar ul ul li a {
   padding: 10px;
+  text-align: center; /* Center submenu items */
 }
 
 /* Phone number styles */
@@ -134,7 +140,9 @@ body {
   .navbar ul {
     display: none;
     flex-direction: column;
+    
     width: 100%;
+    
   }
 
   .navbar ul li {
@@ -143,6 +151,18 @@ body {
 
   .navbar ul ul {
     position: static;
+  }
+
+  .navbar ul li a {
+    background-color: rgba(51, 51, 51, 0.822); /* Set background color for menu items on phone screens */
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 10px;
+   
+  }
+
+  .navbar ul ul li a {
+    background-color: rgba(51, 51, 51, 0.822); /* Set background color for submenu items on phone screens */
+    
   }
 
   .logo-text {
