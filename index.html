@@ -677,38 +677,52 @@ footer {
   </footer>
 
 
-  <script>
-    function toggleMenu() {
-  var menu = document.getElementById('nav-menu');
-  if (menu.style.display === 'flex') {
-    menu.style.display = 'none';
-  } else {
-    menu.style.display = 'flex';
-    menu.style.flexDirection = 'column';
+   <script>
+  function toggleMenu() {
+    var menu = document.getElementById('nav-menu');
+    if (menu.style.display === 'flex') {
+      menu.style.display = 'none';
+    } else {
+      menu.style.display = 'flex';
+      menu.style.flexDirection = 'column';
+    }
   }
-}
 
-let slideIndex = 0;
-const slides = document.querySelectorAll('.slide');
+  let slideIndex = 0;
+  const slides = document.querySelectorAll('.slide');
+  const indicators = document.querySelectorAll('.indicator');
 
-function showSlides() {
-  slides.forEach(slide => slide.classList.remove('active'));
-  slides[slideIndex].classList.add('active');
-  slideIndex++;
-  if (slideIndex >= slides.length) slideIndex = 0;
-  setTimeout(showSlides, 5000);
-}
+  function showSlides() {
+    slides.forEach(slide => slide.classList.remove('active'));
+    indicators.forEach(indicator => indicator.classList.remove('active'));
+    slides[slideIndex].classList.add('active');
+    indicators[slideIndex].classList.add('active');
+    slideIndex++;
+    if (slideIndex >= slides.length) slideIndex = 0;
+    setTimeout(showSlides, 5000);
+  }
 
-function plusSlides(n) {
-  slideIndex += n;
-  if (slideIndex >= slides.length) slideIndex = 0;
-  else if (slideIndex < 0) slideIndex = slides.length - 1;
-  slides.forEach(slide => slide.classList.remove('active'));
-  slides[slideIndex].classList.add('active');
-}
+  function plusSlides(n) {
+    slideIndex += n;
+    if (slideIndex >= slides.length) slideIndex = 0;
+    else if (slideIndex < 0) slideIndex = slides.length - 1;
+    updateSlides();
+  }
 
-showSlides();
-  </script>
+  function goToSlide(n) {
+    slideIndex = n;
+    updateSlides();
+  }
+
+  function updateSlides() {
+    slides.forEach(slide => slide.classList.remove('active'));
+    indicators.forEach(indicator => indicator.classList.remove('active'));
+    slides[slideIndex].classList.add('active');
+    indicators[slideIndex].classList.add('active');
+  }
+
+  showSlides();
+</script>
 
 
 
