@@ -140,9 +140,7 @@ body {
   .navbar ul {
     display: none;
     flex-direction: column;
-    
     width: 100%;
-    
   }
 
   .navbar ul li {
@@ -154,15 +152,11 @@ body {
   }
 
   .navbar ul li a {
-    background-color: rgba(51, 51, 51, 0.822); /* Set background color for menu items on phone screens */
-    border-bottom-left-radius: 10px;
-    border-top-right-radius: 10px;
-   
+    background-color: #333; /* Set background color for menu items on phone screens */
   }
 
   .navbar ul ul li a {
-    background-color: rgba(51, 51, 51, 0.822); /* Set background color for submenu items on phone screens */
-    
+    background-color: #333; /* Set background color for submenu items on phone screens */
   }
 
   .logo-text {
@@ -186,6 +180,11 @@ body {
 
   .products, .advertisements {
     flex-direction: column; /* Make products and advertisements containers display in one row */
+    width: 100%; /* Make products and advertisements cover entire width */
+  }
+
+  .who-we-are {
+    width: 100%; /* Make who-we-are section cover entire width */
   }
 
   .footer-row {
