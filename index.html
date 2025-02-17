@@ -1,503 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <meta charset="UTF-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Prosper Technology Ltd</title>
   <meta name="description" content="Prosper Technology Ltd - Your trusted partner for IT services, web design, graphic design, and digital marketing.">
   <meta name="keywords" content="IT services, web design, graphic design, digital marketing, Prosper Technology Ltd">
   <link rel="icon" href="prosper.png" type="image/png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-  <style>
-  /* General Styles */
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  background-color: #f9f9f9;
-  overflow-x: hidden; /* Prevent horizontal scroll */
-}
-
-/* Container for centering content */
-.main-container {
-  max-width: 100%;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-/* Navbar Styles */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-image: url('tech2.jpg');
-  background-position-x: 100%;
-  background-size: cover;
-  background-color: rgba(51, 51, 51, 0.911);
-  padding: 0 20px;
-  height: 130px;
-  z-index: 1000; /* Ensure navbar is on top */
-  position: relative;
-}
-
-.logo-container {
-  display: flex;
-  align-items: center;
-}
-
-.navbar img {
-  height: 60px;
-  margin-right: 15px;
-}
-
-.logo-text {
-  color: #38fffd;
-  font-size: 24px;
-  font-weight: bold;
-  font-family: 'Chopsic', sans-serif;
-}
-
-@font-face {
-  font-family: 'Chopsic';
-  src: url('supercharge.otf') format('woff2'),
-       url('path/to/chopsic.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
-.navbar ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-}
-
-.navbar ul li {
-  position: relative;
-}
-
-.navbar ul li a {
-  color: #ffffff;
-  padding: 10px 20px;
-  text-decoration: none;
-  display: block;
-  transition: background-color 0.3s ease;
-  text-align: center; /* Center menu items */
-  background-color: rgba(51, 51, 51, 0); /* Set background color */
-}
-
-.navbar ul li a:hover {
-  background-color: #002427;
-}
-
-.navbar ul li:hover > ul {
-  display: block;
-}
-
-.navbar ul ul {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: #003e44ec; /* Set background color */
-  min-width: 150px;
-  z-index: 1000; /* Ensure submenu is on top */
-}
-
-.navbar ul ul li {
-  width: 100%;
-}
-
-.navbar ul ul li a {
-  padding: 10px;
-  text-align: center; /* Center submenu items */
-}
-
-/* Phone number styles */
-.phone-number {
-  display: flex;
-  align-items: center;
-  color: white;
-}
-
-.phone-number i {
-  margin-right: 10px;
-}
-
-/* Hamburger Menu Styles */
-.hamburger {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-}
-
-.hamburger div {
-  width: 25px;
-  height: 3px;
-  background-color: #38fffd;
-  margin: 4px 0;
-  transition: 0.4s;
-}
-
-/* Responsive Navbar */
-@media (max-width: 768px) {
- 
-  .navbar {
-  background-image: none; /* Remove background image */
-    background-color: #002427; /* Set background color */
-  }
-
-  .navbar ul {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .navbar ul li {
-    width: 100%;
-  }
-
-  .navbar ul ul {
-    position: static;
-  }
-
-  .navbar ul li a {
-    background-color: #003e44ec; /* Set background color for menu items on phone screens */
-  }
-
-  .navbar ul ul li a {
-    background-color: #003e44ec; /* Set background color for submenu items on phone screens */
-  }
-
-  .logo-text {
-    font-size: 15px;
-  }
-
-  .hamburger {
-    display: flex;
-    margin-top: 10px;
-    align-self: center; /* Center the hamburger menu */
-  }
-
-  .phone-number {
-    display: none;
-  }
-
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .products, .advertisements {
-    flex-direction: column; /* Make products and advertisements containers display in one row */
-    width: 100%; /* Make products and advertisements cover entire width */
-    object-fit: cover;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  .who-we-are {
-    width: 100%; /* Make who-we-are section cover entire width */
-    object-fit: 100%;
-    box-sizing: border-box;
-    
-  }
-
-  .footer-row {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .footer-column {
-    width: 100%;
-    margin-bottom: 20px;
-  }
-}
-
-.main-container h1 {
-  text-align: center;
-  margin-bottom: 20px;
-  color: #333;
-}
-
-/* Slideshow Styles */
-.slideshow-container {
-  position: relative;
-  width: 100%; /* Full width */
-  height: 400px; /* Adjust height as needed */
-  overflow: hidden; /* Hide overflow */
-  object-fit: cover;
-}
-
-.slides {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-.slide {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  transition: opacity 1s ease-in-out; /* Fade transition */
-}
-
-.slide img {
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  object-fit: cover; /* Ensure image covers the container */
-}
-
-.slide .text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  font-size: 36px;
-  font-weight: bold;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  text-align: center;
-}
-
-.slide.active {
-  opacity: 1; /* Show the active slide */
-}
-
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  padding: 16px;
-  margin-top: -22px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-}
-
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-.prev:hover, .next:hover {
-  background-color: rgba(0, 0, 0, 0.8); /* Darker on hover */
-}
-
-
-.slide-indicators {
-  text-align: center;
-  margin-top: 10px;
-}
-.indicator {
-  display: inline-block;
-  width: 10px;
-  height: 10px;
-  background-color: #ccc;
-  border-radius: 50%;
-  margin: 0 5px;
-  cursor: pointer;
-}
-.indicator.active {
-  background-color: #38fffd;
-}
-
-/* Body Styles */
-.container {
-  padding: 0px;
-}
-
-.who-we-are {
-  max-width: 1200px;
-  margin: 0 auto;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-}
-
-h2 {
-  margin-bottom: 20px;
-  text-align: center;
-  color: #333;
-}
-
-p {
-  text-align: justify;
-  color: #555;
-  line-height: 1.6;
-}
-
-.products, .advertisements {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-.product, .advertisement {
-  flex: 1 1 calc(33.333% - 40px);
-  background-color: #fff;
-  padding: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  border-radius: 10px;
-  overflow: hidden;
-  transition: transform 0.3s ease;
-}
-
-.product:hover {
-  transform: scale(1.05);
-}
-
-.product img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 10px;
-}
-
-.product p {
-  font-style: italic;
-  text-align: justify;
-  color: #333;
-}
-
-.advertisement {
-  background-color: #38fffd;
-  color: #333;
-}
-
-.read-more {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 10px 20px;
-  background-color: #333;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-}
-
-.read-more:hover {
-  background-color: #555;
-}
-
-/* Footer Styles */
-footer {
-  background-color: #333;
-  color: white;
-  text-align: center;
-  padding: 20px 0;
-  margin-top: 20px;
-}
-
-.footer-row {
-  display: flex;
-  justify-content: space-between;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-  text-align: left;
-}
-
-.footer-column {
-  flex: 1;
-  margin: 0 10px;
-}
-
-.footer-column h3 {
-  margin-bottom: 15px;
-  font-size: 18px;
-  color: #38fffd;
-}
-
-.footer-column ul {
-  list-style: none;
-  padding: 0;
-}
-
-.footer-column ul li {
-  margin-bottom: 10px;
-}
-
-.footer-column ul li a {
-  color: white;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.footer-column ul li a:hover {
-  color: #38fffd;
-}
-
-.footer-column form {
-  display: flex;
-  flex-direction: column;
-}
-
-.footer-column input,
-.footer-column textarea {
-  margin-bottom: 10px;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  font-size: 14px;
-}
-
-.footer-column button {
-  padding: 10px;
-  background-color: #38fffd;
-  color: #333;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.footer-column button:hover {
-  background-color: #28c7c5;
-}
-
-.social-icons {
-  display: flex;
-  gap: 30px;
-}
-
-.social-icons a {
-  color: white;
-  font-size: 24px;
-  transition: color 0.3s ease;
-}
-
-.social-icons a:hover {
-  color: #38fffd;
-}
-
-.copyright {
-  margin-top: 20px;
-  font-size: 14px;
-  color: #ccc;
-}
-  </style>
-
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <!-- Navbar -->
-
-
-
   <nav class="navbar">
     <div class="logo-container">
       <img src="prosper.png" alt="Prosper Technology Ltd Logo">
@@ -550,44 +64,37 @@ footer {
   <!-- Body Content -->
   <div class="main-container">
     <div class="container">
-      <h1>Welcome to Prosper TechnologyLtd</h1>
+      <h1>Welcome to Prosper Technology Ltd</h1>
 
       <!-- Slideshow -->
       <div class="slideshow-container">
         <div class="slides">
           <div class="slide active">
-            <img src="bg.jpg" alt="Background">
+            <img src="bg.jpg" alt="Background image showcasing technology solutions">
             <div class="text">Your number One I.T solution</div>
           </div>
           <div class="slide">
-            <img src="hands.jpg" alt="Hands">
+            <img src="hands.jpg" alt="Hands image representing great customer service">
             <div class="text">Great Customer Service</div>
           </div>
           <div class="slide">
-            <img src="it.png" alt="IT">
+            <img src="it.png" alt="IT image representing technical excellence">
             <div class="text">Technical Excellence</div>
           </div>
           <div class="slide">
-            <img src="graphics.png" alt="Graphics">
+            <img src="graphics.png" alt="Graphics image representing creativity">
             <div class="text">Giving life to your Imagination</div>
           </div>
         </div>
-
-
-        
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>
-
-        
+        <a class="prev" onclick="plusSlides(-1)" aria-label="Previous slide">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)" aria-label="Next slide">&#10095;</a>
       </div>
       <div class="slide-indicators">
-        <span class="indicator active" onclick="goToSlide(0)"></span>
-        <span class="indicator" onclick="goToSlide(1)"></span>
-        <span class="indicator" onclick="goToSlide(2)"></span>
-        <span class="indicator" onclick="goToSlide(3)"></span>
+        <span class="indicator active" onclick="goToSlide(0)" aria-label="Slide 1"></span>
+        <span class="indicator" onclick="goToSlide(1)" aria-label="Slide 2"></span>
+        <span class="indicator" onclick="goToSlide(2)" aria-label="Slide 3"></span>
+        <span class="indicator" onclick="goToSlide(3)" aria-label="Slide 4"></span>
       </div>
-      
-
 
       <div class="who-we-are">
         <h2>Who We Are</h2>
@@ -657,10 +164,9 @@ footer {
           <input type="text" placeholder="Your Name" required>
           <input type="email" placeholder="Your Email" required>
           <textarea placeholder="Your Message" rows="4" required></textarea>
-          <button type="submit">Send Message</button>
+          <button type="submit"><b>Send Message</b></button>
         </form>
       </div>
-      
 
       <!-- Social Icons Column -->
       <div class="footer-column">
@@ -673,59 +179,28 @@ footer {
         </div>
       </div>
     </div>
-    <p class="copyright" style="text-align: center; font-size: 18px; background-color: #181818; padding: 10px;">© 2025 Prosper Technology Ltd. All rights reserved.</p>
+    <p class="copyright" style="text-align: center; font-size: 18px; background-color: #051a35; padding: 10px;">© 2025 Prosper Technology Ltd. All rights reserved.</p>
   </footer>
 
+  <!-- Floating Chat Button -->
+  <div class="chat-button" onclick="openChat()">
+    <i class="fas fa-comments"></i>
+  </div>
 
-   <script>
-  function toggleMenu() {
-    var menu = document.getElementById('nav-menu');
-    if (menu.style.display === 'flex') {
-      menu.style.display = 'none';
-    } else {
-      menu.style.display = 'flex';
-      menu.style.flexDirection = 'column';
-    }
-  }
+  <!-- Chat Window -->
+  <div id="chat-window" class="chat-window">
+    <div class="chat-header">
+      <span>Chat with us</span>
+      <button onclick="closeChat()" class="close-chat">&times;</button>
+    </div>
+    <div class="chat-body">
+      <div class="chat-messages" id="chat-messages">
+        <!-- Chat messages will appear here -->
+      </div>
+      <input type="text" id="chat-input" placeholder="Type your message..." onkeypress="sendMessage(event)">
+    </div>
+  </div>
 
-  let slideIndex = 0;
-  const slides = document.querySelectorAll('.slide');
-  const indicators = document.querySelectorAll('.indicator');
-
-  function showSlides() {
-    slides.forEach(slide => slide.classList.remove('active'));
-    indicators.forEach(indicator => indicator.classList.remove('active'));
-    slides[slideIndex].classList.add('active');
-    indicators[slideIndex].classList.add('active');
-    slideIndex++;
-    if (slideIndex >= slides.length) slideIndex = 0;
-    setTimeout(showSlides, 5000);
-  }
-
-  function plusSlides(n) {
-    slideIndex += n;
-    if (slideIndex >= slides.length) slideIndex = 0;
-    else if (slideIndex < 0) slideIndex = slides.length - 1;
-    updateSlides();
-  }
-
-  function goToSlide(n) {
-    slideIndex = n;
-    updateSlides();
-  }
-
-  function updateSlides() {
-    slides.forEach(slide => slide.classList.remove('active'));
-    indicators.forEach(indicator => indicator.classList.remove('active'));
-    slides[slideIndex].classList.add('active');
-    indicators[slideIndex].classList.add('active');
-  }
-
-  showSlides();
-</script>
-
-
-
-
-  </body> 
-  </html>
+  <script src="script.js"></script>
+</body>
+</html>
