@@ -89,3 +89,39 @@
       }
     }
   }
+
+
+  const text = "Our Vision is to Empower a connected world through innovative Technology Solutions that drive Efficiency, inspire Creativity and transform visibility of our Clients in today's growing digital world. ✌";
+const typingText = document.getElementById("typing-text");
+let index = 0;
+
+function type() {
+    if (index < text.length) {
+        typingText.textContent += text.charAt(index);
+        index++;
+        setTimeout(type, 50); // Adjust typing speed here (in milliseconds)
+    } else {
+        // Optional: Stop the cursor blinking after typing is done
+        document.querySelector(".cursor").style.animation = "none";
+    }
+}
+
+type();
+
+const missionText = "Our mission is to empower businesses with cutting-edge technology and creative designs that drive growth and enhance online presence. Whether you need robust IT support, stunning graphics, a user-friendly website, or effective digital marketing strategies, we are here to make it happen.";
+const typingTextMission = document.getElementById("typing-text-mission");
+let missionIndex = 0;
+
+function typeMissionText() {
+  if (missionIndex < missionText.length) {
+    typingTextMission.textContent += missionText.charAt(missionIndex);
+    missionIndex++;
+    setTimeout(typeMissionText, 50); // Adjust typing speed here (in milliseconds)
+  } else {
+    // Optional: Stop the cursor blinking after typing is done
+    document.querySelector(".cursor").style.animation = "none";
+  }
+}
+
+typeMissionText();
+  
