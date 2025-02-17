@@ -196,6 +196,18 @@
       box-sizing: border-box;
     }
 
+    .articles-container {
+      flex-direction: column;
+     
+    }
+
+    .article {
+      flex: 1 1 100%;
+      margin: 10px 0;
+    }
+
+
+
     .who-we-are {
       width: 100%;
       object-fit: 100%;
