@@ -194,10 +194,17 @@
       <button onclick="closeChat()" class="close-chat">&times;</button>
     </div>
     <div class="chat-body">
-      <div class="chat-messages" id="chat-messages">
-        <!-- Chat messages will appear here -->
+      <div id="chat-form">
+        <input type="text" id="chat-name" placeholder="Your Name" required>
+        <input type="email" id="chat-email" placeholder="Your Email" required>
+        <button onclick="startChat()">Start Chat</button>
       </div>
-      <input type="text" id="chat-input" placeholder="Type your message..." onkeypress="sendMessage(event)">
+      <div id="chat-content" style="display: none;">
+        <div class="chat-messages" id="chat-messages">
+          <!-- Chat messages will appear here -->
+        </div>
+        <input type="text" id="chat-input" placeholder="Type your message..." onkeypress="sendMessage(event)">
+      </div>
     </div>
   </div>
 
