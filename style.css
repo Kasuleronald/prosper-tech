@@ -80,26 +80,17 @@
   .navbar ul li:hover > ul {
     display: block;
   }
-  .navbar ul li:not(:last-child)::after { /* Add separator to all but the last item */
-    content: "";
-    position: absolute;
-    top: 50%;
-    right: 0; /* Position at the right edge */
-    transform: translateY(-50%); /* Vertically center */
-    height: 50%;
-    width: 1px;
-    background-color: #ffffff; /* Color of the separator */
-   }
 
-  .navbar ul ul {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #082b5ae5;
-    min-width: 200px;
-    z-index: 1000;
-  }
+
+.navbar ul ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #082b5ae5;
+  min-width: 200px;
+  z-index: 1000;
+}
 
   .navbar ul ul li {
     width: 100%;
@@ -108,11 +99,21 @@
   .navbar ul ul li a {
     padding: 10px;
     text-align: center;
-    height: 40px;
     padding: 15px 20px; /* Adjust vertical padding to increase height */
   }
 
   /* Phone number styles */
+
+  /* Phone link styles */
+.phone-link {
+  color: white;
+  text-decoration: none;
+}
+
+.phone-link:hover {
+  text-decoration: underline; /* Optional: Add underline on hover */
+}
+  
   .phone-number {
     display: flex;
     align-items: center;
@@ -596,4 +597,96 @@
 
 #chat-form button:hover {
   background-color: #051a35;
+}
+
+.mission-section {
+  max-width: 1000px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.typing-container {
+  font-size: 1.5em;
+  line-height: 1.6;
+  color: #333;
+}
+
+.cursor {
+  display: inline-block;
+  margin-left: 3px;
+  animation: blink 0.7s infinite;
+
+}
+
+.mission-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* Adjust as needed */
+  margin-top: 20px;
+}
+ 
+.centered-image {
+  max-width: 100%;
+  width: 150px;
+  height: auto;
+  border-radius: 10px;
+}
+
+
+@keyframes blink {
+  0%, 100% {
+      opacity: 1;
+  }
+  50% {
+      opacity: 0;
+  }
+}
+.values-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  max-width: 1000px;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h2 {
+  text-align: left;
+}
+
+.values-column {
+  flex: 1;
+  margin: 10px;
+}
+
+.values-column h2 {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.values-column li {
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 25px; /* Adjust as needed */
+}
+
+.values-column li::before {
+  content: "\1F449"; /* Unicode for pointing finger emoji */
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 0.8em; /* Adjust size as needed */
+  color: #074ca7; /* Adjust color as needed */
 }
