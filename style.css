@@ -614,7 +614,7 @@
   font-size: 1.5em;
   line-height: 1.6;
   color: #333;
-   padding: 10px;
+  padding: 10px;
   text-align: justify; /* Justify the text */
   font-style: italic; /* Make the text italic */
 }
@@ -692,4 +692,81 @@ h2 {
   top: 0;
   font-size: 0.8em; /* Adjust size as needed */
   color: #074ca7; /* Adjust color as needed */
+}
+
+.featured-articles {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 0px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  
+}
+
+.featured-articles h2 {
+  text-align: center;
+  color: #333;
+}
+
+.featured-articles hr {
+  border: 0;
+  height: 1px;
+  background: #0257c7;
+  margin: 20px 0;
+}
+
+.articles-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.article {
+  flex: 1;
+  margin: 10px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 0px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  border: 0.5px solid #0257c7;
+}
+
+.article img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0px;
+}
+
+.article h3 {
+  margin: 15px 0;
+  color: #074ca7;
+}
+
+.article .date {
+  font-size: 0.9em;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+.article p {
+  text-align: justify;
+  color: #555;
+  line-height: 1.6;
+}
+
+.article .read-more {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #074ca7;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.article .read-more:hover {
+  background-color: #051a35;
 }
